@@ -1,0 +1,12 @@
+<h1>All Feedback</h1>
+<ul>
+    {% for feedback in feedback_list %}
+    <li>
+        <strong>{{ feedback.name }}</strong> ({{ feedback.email }}) said:<br>
+        <p>{{ feedback.feedback_text }}</p>
+        <small>Submitted on: {{ feedback.submitted_at }}</small>
+    </li>
+    {% empty %}
+        <p>No feedback submitted yet.</p>
+    {% endfor %}
+</ul>

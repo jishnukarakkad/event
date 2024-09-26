@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Submitted</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #0d93c7;
+        }
+        p {
+            font-size: 18px;
+        }
+        .home-button {
+            padding: 10px 20px;
+            background-color: #0d93c7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;  /* Remove underline */
+        }
+        .home-button:hover {
+            background-color: #0b7fa1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Thank You!</h1>
+<p>Your feedback has been submitted successfully.</p>
+<a href="{% url 'view_feedback' %}">ViewFeedbacks</a>
+<a href="{% url 'index' %}" class="home-button">Back to Home</a>
+
+</body>
+</html>
