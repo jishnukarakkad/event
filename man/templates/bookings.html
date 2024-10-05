@@ -13,7 +13,7 @@
             padding: 0;
         }
         header {
-            background-color: #2c3e50; /* Dark header color */
+            background-color: #2c3e50;
             color: #ecf0f1;
             padding: 15px 0;
             text-align: center;
@@ -21,7 +21,6 @@
         }
         header h1 {
             margin: 0;
-            color: white; /* White title color */
         }
         .container {
             width: 80%;
@@ -32,10 +31,7 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #34495e; /* Header color */
-        }
-        .event-selection {
-            margin-top: 20px;
+            color: #34495e;
         }
         label {
             display: block;
@@ -51,23 +47,23 @@
             font-size: 16px;
         }
         input:focus, select:focus {
-            border-color: #2980b9; /* Focus color */
+            border-color: #2980b9;
             outline: none;
         }
         button {
-            background-color: #2980b9; /* Button color */
+            background-color: #2980b9;
             color: #fff;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #3498db; /* Button hover color */
+            background-color: #3498db;
         }
         footer {
             text-align: center;
             padding: 15px 0;
-            background-color: #2c3e50; /* Footer color */
+            background-color: #2c3e50;
             color: #ecf0f1;
             position: relative;
             bottom: 0;
@@ -89,31 +85,43 @@
 </header>
 
 <div class="container">
-    <h2>Booking Form</h2>
-    <form method="post">
+    <h2>Book an Event</h2>
+
+    <form method="post" action="{% url 'bookings' %}">
         {% csrf_token %}
+
+        <!-- Dropdown for selecting an event -->
         <label for="event">Select an Event:</label>
-        <select id="event" name="event">
+        <select id="event" name="event" required>
+            <option value="">Select an Event</option>
             {% for event in events %}
-                <option value="{{ event.id }}">{{ event.name }} - {{ event.date }}</option>
+                <option value="{{ event.id }}" data-price="{{ event.price_per_person }}">
+                    {{ event.name }} - {{ event.date }} (${{ event.price_per_person }})
+                </option>
             {% endfor %}
         </select>
-    
+
+        <!-- Input for number of tickets -->
+        <label for="num_tickets">Number of Tickets:</label>
+        <input type="number" id="num_tickets" name="num_tickets" value="1" min="1" max="10" required>
+
+        <!-- Input for booking date -->
         <label for="booking_date">Booking Date:</label>
         <input type="date" id="booking_date" name="booking_date" required>
 
+        <!-- Input for user details -->
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
-    
+
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-    
+
         <label for="contact">Contact Information:</label>
         <input type="text" id="contact" name="contact" required>
-    
+
+        <!-- Submit button -->
         <button type="submit">Book Now</button>
     </form>
-    
 </div>
 
 <footer>

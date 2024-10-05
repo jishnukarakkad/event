@@ -116,12 +116,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 import os
-
+from pathlib import Path
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Make sure the directory exists
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'man/static'),
@@ -152,3 +152,5 @@ DEFAULT_FROM_EMAIL = 'testing450439@gmail.com'
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
+
+

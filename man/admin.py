@@ -1,12 +1,13 @@
 from django.contrib import admin
 from .models import Events, Booking, Feedback 
 from .models import Contact 
-
+from . models import Profile
 # Register the Event model with custom display in the admin
+
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')  # Columns to display in the admin list view
-    search_fields = ('name', 'description')  # Add search functionality
-    list_filter = ('date',)  # Filter events by date
+    list_display = ('name', 'date', 'location', 'price_per_person')
+    fields = ('name', 'description', 'date', 'location', 'price_per_person')
+
 
 # Register the Booking model with custom display in the admin
 class BookingAdmin(admin.ModelAdmin):
@@ -28,6 +29,9 @@ class ContactAdmin(admin.ModelAdmin):
     list_filter = ('created_at',)
 
 
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'contact_number')  # Display these fields in the admin list view
+    search_fields = ('user__username', 'user__email', 'contact_number')  # Enable searching
 
 
 
@@ -36,3 +40,4 @@ admin.site.register(Events,EventAdmin)
 admin.site.register(Booking,BookingAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Feedback, FeedbackAdmin)  # Register the Feedback model
+admin.site.register(Profile,ProfileAdmin)

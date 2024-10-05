@@ -61,14 +61,24 @@
 <p>Let us know your feedback for the event below:</p>
 
 <div class="feedback-form">
-    <form method="POST" action="{% url 'feedback' %}">
+    <form method="POST" action="{% url 'feedback' %}">  <!-- Change to the feedback URL -->
         {% csrf_token %}
         {{ form.as_p }}  <!-- Render form fields with proper formatting -->
 
         <!-- Show form errors if there are any -->
         {% if form.errors %}
             <div class="errorlist">
-                Please correct the errors below and resubmit.
+                <strong>Please correct the errors below:</strong>
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         {% endif %}
 

@@ -80,52 +80,22 @@
         .logout-button:hover {
             background-color: #c82333; /* Darker Red */
         }
-
-        /* Modal styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            border-radius: 5px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
-
+<!-- profile.html -->
 <div class="container">
     <h1>Your Profile</h1>
     
     <div class="user-info">
-        <p class="welcome-message">Welcome, {{ user.username }}!</p>
-        <p><strong>Email:</strong> {{ user.email }}</p>
-        <p><strong>Contact Number:</strong> {{ profile.contact_number }}</p>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        
     </div>
+
+   
+</div>
+
+    
     
     <h2>Your Bookings</h2>
     {% if bookings %}
@@ -153,35 +123,6 @@
 
     <a href="{% url 'logout' %}" class="logout-button">Logout</a>
 </div>
-
-<!-- The Modal -->
-<div id="welcomeModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Welcome Back!</h2>
-        <p>You are now logged into your account. Feel free to explore your bookings and manage your profile.</p>
-    </div>
-</div>
-
-<script>
-    // Show the modal when the page loads
-    window.onload = function() {
-        document.getElementById('welcomeModal').style.display = 'block';
-    }
-
-    // Function to close the modal
-    function closeModal() {
-        document.getElementById('welcomeModal').style.display = 'none';
-    }
-
-    // Close the modal when clicking outside of the modal
-    window.onclick = function(event) {
-        const modal = document.getElementById('welcomeModal');
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
 
 </body>
 </html>

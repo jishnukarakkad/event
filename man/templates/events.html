@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Verdana', sans-serif;
-            background-image: url('/static/images/imagess.jpg'); /* Ensure this path is correct */
+            background-image: url('/static/images/bg3.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -25,66 +25,34 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         header img {
-            width: 150px; /* Adjust logo size */
+            width: 150px; 
             margin-bottom: 10px;
         }
         header h1 {
             margin: 0;
             color: white;
         }
-        .container {
-            flex: 1;
-            width: 80%;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #34495e;
+        h2, h3, h4, p {
+            color: white; /* Change text color to white */
         }
         .event-selection {
             margin-top: 20px;
+            width: 80%;
+            margin: 30px auto;
+        }
+        .event-option {
+            margin-bottom: 30px;
         }
         label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
-        select, input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        select:focus, input:focus {
-            border-color: #2980b9;
-            outline: none;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            background-color: #2980b9;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #3498db;
-        }
         .event-details {
-            background-color: transparent; /* Remove the box-like background */
+            background-color: transparent; 
             border-radius: 5px;
             padding: 20px;
             margin-top: 20px;
-            transition: all 0.3s;
         }
         .images-container {
             display: flex;
@@ -94,7 +62,7 @@
         }
         .images-container img {
             width: 100%;
-            max-width: 400px; /* Increased image size */
+            max-width: 400px; 
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
@@ -106,7 +74,7 @@
             font-size: 14px;
         }
         @media (max-width: 768px) {
-            .container {
+            .event-selection {
                 width: 95%;
             }
         }
@@ -115,90 +83,89 @@
 <body>
 
 <header>
-    <img src="/static/images/logo.png" alt="Logo"> <!-- Ensure this path is correct for your logo -->
+    <img src="/static/images/logo.png" alt="Logo">
     <h1>Events</h1>
 </header>
 
-<div class="container">
+<main>
     <div class="event-selection">
-        <h2>Select an Event</h2>
-        <select id="eventSelector">
-            <option value="">Select an Event</option>
-            <option value="wedding">Wedding Ceremony</option>
-            <option value="birthday">Birthday Party</option>
-            <option value="reception">Reception Event</option>
-        </select>
-    </div>
+        <h2>Events That We Organize</h2>
+        
+        <!-- Concert Event Option -->
+        <div class="event-option">
+            <h3>Concerts</h3>
+            <div class="images-container">
+                <img src="../static/images/con1.jpeg" alt="Concert Event Image 1">
+                <img src="../static/images/con2.jpeg" alt="Concert Event Image 2">
+            </div>
+            <p>Join us for an unforgettable night of music at our annual concert featuring a lineup of talented artists from various genres. Whether you’re a fan of rock, pop, or classical, there’s something for everyone. Enjoy live performances, engage with fellow music lovers, and create lasting memories.</p>
+        </div>
 
-    <div id="eventDetails" class="event-details">
-        <p>Please select an event to see details.</p>
+        <!-- Art Exhibition Option -->
+        <div class="event-option">
+            <h3>Art Exhibition</h3>
+            <div class="images-container">
+                <img src="../static/images/art1.jpeg" alt="Art Exhibition Image 1">
+                <img src="../static/images/art2.jpeg" alt="Art Exhibition Image 2">
+            </div>
+            <p>Explore the creative minds of contemporary artists at our annual Art Exhibition. This event showcases a variety of artistic expressions, including painting, sculpture, and photography. Engage with artists, attend workshops, and enjoy a day immersed in culture and creativity.</p>
+        </div>
+
+        <!-- Corporate Event Option -->
+        <div class="event-option">
+            <h3>Corporate Events</h3>
+            <div class="images-container">
+                <img src="../static/images/cor1.jpeg" alt="Corporate Event Image 1">
+                <img src="../static/images/cor2.jpeg" alt="Corporate Event Image 2">
+            </div>
+            <p>Elevate your business with our Corporate Events designed for networking, team-building, and professional development. Our events feature industry leaders, engaging workshops, and opportunities to connect with like-minded professionals. Let’s create impactful experiences together!</p>
+        </div>
+
+        <!-- Football Event Option -->
+        <div class="event-option">
+            <h3>FOOTBALL</h3>
+            <div class="images-container">
+                <img src="../static/images/foot1.jpeg" alt="Sports Event Image 1">
+                <img src="../static/images/foot2.jpeg" alt="Sports Event Image 2">
+            </div>
+            <p>Experience the thrill of the game at our Football Events, where teams compete for glory on the field. Whether it’s a local league match or a prestigious tournament, fans can enjoy an electrifying atmosphere filled with cheers, rivalries, and sportsmanship. Join us and support your favorite team!</p>
+        </div>
+
+        <!-- Family Events Section -->
+        <div class="event-option">
+            <h3>Family Events</h3>
+            
+            <!-- Wedding Ceremony Option -->
+            <h4>Wedding Ceremony</h4>
+            <div class="images-container">
+                <img src="../static/images/mar1.jpg" alt="Wedding Ceremony Image 1">
+                <img src="../static/images/mar2.jpg" alt="Wedding Ceremony Image 2">
+            </div>
+            <p>A wedding is a ceremonial event where two individuals come together in a legally recognized union. It often involves various traditions and rituals, including exchanging vows, rings, and typically celebrating with family and friends. Weddings can vary widely in style, size, and cultural significance, ranging from intimate ceremonies to grand celebrations.</p>
+            
+            <!-- Birthday Party Option -->
+            <h4>Birthday Party</h4>
+            <div class="images-container">
+                <img src="../static/images/bir1.jpg" alt="Birthday Party Image 1">
+                <img src="../static/images/bir2.jpg" alt="Birthday Party Image 2">
+            </div>
+            <p>A birthday celebration marks the anniversary of a person’s birth. These events can be as simple as a small gathering with family or friends, or as elaborate as a themed party with decorations, games, and entertainment. Common elements include a birthday cake, candles, gifts, and activities that reflect the celebrant's interests.</p>
+            
+            <!-- Reception Event Option -->
+            <h4>Reception Event</h4>
+            <div class="images-container">
+                <img src="../static/images/rec1.jpg" alt="Reception Event Image 1">
+                <img src="../static/images/rec2.webp" alt="Reception Event Image 2">
+            </div>
+            <p>A reception is a formal gathering held after a ceremony, often in the context of weddings or other significant milestones. For weddings, the reception is where the newlyweds celebrate with their guests, typically featuring food, drinks, speeches, and dancing. Receptions can also occur after events like award ceremonies, anniversaries, or milestone birthdays, serving as a festive conclusion to the main event.</p>
+        </div>
     </div>
-</div>
+</main>
 
 <footer>
     <p>&copy; 2024 JK Events. All rights reserved.</p>
-    <p><a href="{% url 'contacts' %}" style="color: #ecf0f1; text-decoration: none;">Contact Us</a></p> <!-- Link to contact us page -->
+    <p><a href="{% url 'contacts' %}" style="color: #ecf0f1; text-decoration: none;">Contact Us</a></p>
 </footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const eventDetails = document.getElementById('eventDetails');
-        const eventSelector = document.getElementById('eventSelector');
-
-        const events = {
-            wedding: {
-                title: "Wedding Ceremony",
-                description: "A wedding ceremony is a profound and joyous occasion that marks the union of two individuals in love, celebrated with family and friends. It serves as a beautiful ritual, intertwining personal vows with cultural traditions that reflect the couple's unique journey. From the moment the bride walks down the aisle to the heartfelt exchange of vows, each moment is filled with emotion, symbolizing the commitment to share a life together. The atmosphere is often adorned with stunning decorations, fragrant flowers, and elegant music, creating an enchanting backdrop for this milestone event. As loved ones gather to witness this heartfelt declaration of love, the ceremony becomes a cherished memory, encapsulating the hopes and dreams of the couple as they embark on their new life together.",
-                price: "$5000", // Price details for wedding ceremony
-                images: [
-                    "../static/images/mar1.jpg",
-                    "../static/images/mar2.jpg"
-                ]
-            },
-            birthday: {
-                title: "Birthday Party",
-                description: "A birthday party is a joyous occasion that celebrates the life and milestones of an individual, bringing together family and friends for a day of fun and laughter. Whether it’s a child’s whimsical theme party with colorful decorations and playful games, or an elegant adult celebration featuring sophisticated decor and a gourmet feast, the essence of a birthday party lies in the joy of togetherness. The highlight of the event often includes the ceremonial cake cutting, where loved ones gather to sing, share heartfelt wishes, and create unforgettable memories. With activities tailored to the guest of honor’s interests, from exciting games to heartfelt toasts, each birthday party becomes a unique reflection of love, celebration, and the passage of time.",
-                price: "$2000", // Price details for birthday party
-                images: [
-                    "../static/images/bir1.jpg",
-                    "../static/images/bir2.jpg"
-                ]
-            },
-            reception: {
-                title: "Reception Event",
-                description: "A reception event is a sophisticated gathering that typically follows a significant ceremony, such as a wedding, providing an opportunity for guests to celebrate the newlyweds and enjoy an evening of camaraderie. This occasion is often characterized by elegant decor, exquisite cuisine, and lively entertainment, creating an atmosphere of joy and festivity. Guests mingle, share stories, and raise toasts in honor of the couple, while the celebration unfolds with music that encourages dancing and socializing. With personalized touches that reflect the couple’s style and personality, the reception becomes a memorable conclusion to the day’s formalities, allowing everyone to relax and revel in the happiness of the moment.",
-                price: "$3000", // Price details for reception event
-                images: [
-                    "../static/images/rec1.jpg",
-                    "../static/images/rec2.webp"
-                ]
-            }
-        };
-
-        function updateEventDetails(eventType) {
-            const event = events[eventType];
-            if (event) {
-                eventDetails.innerHTML = `
-                    <h2>${event.title}</h2>
-                    <div class="images-container">
-                        ${event.images.map(src => `<img src="${src}" alt="${event.title} Image">`).join('')}
-                    </div>
-                    <p>${event.description}</p>
-                    <p><strong>Price: ${event.price}</strong></p> <!-- Display price -->
-                `;
-            } else {
-                eventDetails.innerHTML = '<p>Please select an event to see details.</p>';
-            }
-        }
-
-        eventSelector.addEventListener('change', function() {
-            updateEventDetails(this.value);
-        });
-
-        // Initialize with a default message
-        updateEventDetails('');
-    });
-</script>
 
 </body>
 </html>
